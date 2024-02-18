@@ -31,7 +31,7 @@
   -webkit-text-fill-color: transparent;
   animation: textclip 10s linear infinite;
   display: inline-block;
-  font-size: 10rem;
+  font-size: 7rem;
   text-align: center;
 }
 
@@ -46,22 +46,22 @@
     margin-top: 12%;
   }
   .animate-charcter {
-    font-size: 10rem;
+    font-size: 6rem;
   }
 }
 
 @media (max-width: 991px) {
   .a {
-    margin-top: 40%;
+    margin-top: 25%;
   }
   .animate-charcter {
-    font-size: 6rem;
+    font-size: 5rem;
   }
 }
 
 @media (max-width: 767px) {
   .a {
-    margin-top: 50%;
+    margin-top: 30%;
   }
   .animate-charcter {
     font-size: 2.5rem;

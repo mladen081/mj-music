@@ -20,6 +20,25 @@ import SideBarCustom from "./components/SideBarCustom.vue";
   --sidebar-width: 300px;
 }
 
+// *,
+// *::after,
+// *::before {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: inherit;
+// }
+
+// html {
+//   /* This defines what 1rem is (1rem = 10px) */
+//   font-size: 62.5%;
+// }
+
+// body {
+//   font-family: "Fira sans", sans-serif;
+//   background: var(--black);
+//   box-sizing: border-box;
+// }
+
 * {
   margin: 0;
   padding: 0;
@@ -78,6 +97,36 @@ p {
     @media (max-width: 767px) {
       padding-left: 3.5rem;
     }
+  }
+}
+
+@media (max-width: 1400px) {
+  h1 {
+    font-size: 2.7rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 991px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 1.7rem;
   }
 }
 </style>

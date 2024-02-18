@@ -140,23 +140,23 @@ button:hover {
   font-weight: 700;
   padding: 10px 15px;
   margin: 0px 15px;
-  border-radius: 6px;
+  border-radius: 2px;
   width: 150px;
-  border: 5px solid var(--light-blue);
+  border: 2px solid var(--light-blue);
 }
 .next,
 .prev {
   font-weight: 700;
   padding: 10px 15px;
   margin: 0px 15px;
-  border-radius: 6px;
-  border: 5px solid var(--light-blue);
+  border-radius: 5px;
+  border: 2px solid var(--light-blue);
 }
 
 .playlist.all {
   padding: 10px;
-  border-radius: 6px;
-  border: 5px solid var(--light-blue);
+  border-radius: 5px;
+  border: 2px solid var(--light-blue);
   margin: 1rem auto;
   width: 50%;
 }
@@ -178,8 +178,8 @@ button:hover {
 }
 .playlist .song.playing {
   color: var(--light-blue);
-  border: 3px solid var(--light-blue);
-  border-radius: 6px;
+  border: 2px solid var(--light-blue);
+  border-radius: 5px;
 }
 
 .playlist .song.playing:hover {

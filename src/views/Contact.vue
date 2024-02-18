@@ -139,7 +139,7 @@ hr {
 input,
 textarea {
   width: 100%;
-  border: 5px solid #fff;
+  border: 2px solid #fff;
   border-radius: 3px;
   resize: none;
   padding: 0 5px;
@@ -172,7 +172,7 @@ input[type="submit"] {
   background-color: var(--dark-alt);
   border: 0;
   color: #fff;
-  border: 5px solid var(--light);
+  border: 2px solid var(--light);
   border-radius: 8px;
   margin: 10px 0 0 0;
   font-family: "Fira sans" sans-serif;
@@ -182,12 +182,15 @@ input[type="submit"] {
 
 input:hover[type="submit"] {
   color: var(--light-blue);
-  border: 5px solid var(--light-blue);
+  border: 2px solid var(--light-blue);
 }
 
 @media (max-width: 767px) {
   form {
     padding: 10px 10px 0 20px;
+  }
+  .title h1 {
+    padding-left: 1.4rem;
   }
 }
 </style>
