@@ -20,6 +20,13 @@ import SideBarCustom from "./components/SideBarCustom.vue";
   --sidebar-width: 300px;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fira sans", sans-serif;
+}
+
 // *,
 // *::after,
 // *::before {
@@ -33,21 +40,10 @@ import SideBarCustom from "./components/SideBarCustom.vue";
 //   font-size: 62.5%;
 // }
 
-// body {
-//   font-family: "Fira sans", sans-serif;
-//   background: var(--black);
-//   box-sizing: border-box;
-// }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Fira sans", sans-serif;
-}
-
 body {
+  font-family: "Fira sans", sans-serif;
   background: var(--black);
+  //   box-sizing: border-box;
 }
 
 button {

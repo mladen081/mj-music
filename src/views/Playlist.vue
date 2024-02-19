@@ -4,14 +4,22 @@
       <h1>Play Time</h1>
 
       <section class="player">
-        <h2 class="song-title">
+        <h2 class="song-title" @click="resetSong(current)">
           {{ current.title }} - <span>{{ current.artist }}</span>
         </h2>
         <div class="controls">
           <button class="prev" @click="prev">Prev</button>
-          <button class="play" v-if="!isPlaying" @click="play">Play</button>
-          <button class="pause" v-else @click="pause">Pause</button>
+          <button class="play" v-if="!isPlaying" @click="play(current)">
+            Play
+          </button>
+          <button class="pause" v-else @click="togglePlayback">Pause</button>
           <button class="next" @click="next">Next</button>
+        </div>
+        <div class="stop-control">
+          <button class="stop" @click="stop">Stop</button>
+        </div>
+        <div class="progress-bar">
+          <div class="progress" :style="{ width: progress + '%' }"></div>
         </div>
       </section>
       <section class="playlist all">
@@ -20,7 +28,10 @@
           v-for="song in songs"
           :key="song.src"
           @click="play(song)"
-          :class="song.src == current.src ? 'song playing' : 'song'"
+          :class="{
+            'song playing': song.src === current.src && isPlaying,
+            song: true,
+          }"
         >
           {{ song.title }} - {{ song.artist }}
         </button>
@@ -37,6 +48,8 @@ export default {
       current: {},
       index: 0,
       isPlaying: false,
+      currentTime: 0,
+      duration: 0,
       songs: [
         {
           title: "1. Song 1",
@@ -52,52 +65,104 @@ export default {
       player: new Audio(),
     };
   },
+  computed: {
+    progress() {
+      if (this.duration) {
+        return (this.currentTime / this.duration) * 100;
+      } else {
+        return 0;
+      }
+    },
+  },
   methods: {
-    async play(song) {
-      if (typeof song.src != "undefined") {
+    togglePlayback() {
+      if (this.player.paused) {
+        // If the audio is paused, play the song
+        this.play(this.current);
+      } else {
+        // If the audio is playing, pause the song
+        this.pause();
+      }
+    },
+    play(song) {
+      const index = this.songs.findIndex((s) => s.src === song.src);
+      if (index === -1) {
+        console.error("Song not found in the playlist");
+        return;
+      }
+
+      this.index = index; // Update the index
+
+      if (this.player.src !== song.src) {
+        // Load new song
         this.current = song;
         this.player.src = this.current.src;
       }
-      await this.player.play();
-      this.player.addEventListener(
-        "ended",
-        function () {
-          this.index++;
-          if (this.index > this.songs.length - 1) {
-            this.index = 0;
-          }
-          this.current = this.songs[this.index];
-          this.play(this.current);
-        }.bind(this)
-      );
-      this.isPlaying = true;
+
+      // Set the playback position to the stored current time
+      this.player.currentTime = this.currentTime;
+
+      // Check if the audio is paused, then play
+      if (this.player.paused) {
+        // Play the song
+        this.player.play();
+        // Update playback status
+        this.isPlaying = true;
+      }
     },
     pause() {
       this.player.pause();
+      // Store the current playback position
+      this.currentTime = this.player.currentTime;
       this.isPlaying = false;
     },
     next() {
-      this.index++;
-      if (this.index > this.songs.length - 1) {
-        this.index = 0;
-      }
+      this.index = (this.index + 1) % this.songs.length;
       this.current = this.songs[this.index];
-      this.play(this.current);
+      this.resetSong(); // Reset song before playing the next one
     },
     prev() {
-      this.index--;
-      if (this.index < 0) {
-        this.index = this.songs.length - 1;
-      }
+      this.index = (this.index - 1 + this.songs.length) % this.songs.length;
       this.current = this.songs[this.index];
-      this.play(this.current);
+      this.resetSong(); // Reset song before playing the previous one
+    },
+    stop() {
+      this.player.pause();
+      this.player.currentTime = 0; // Reset current time to 0
+      this.isPlaying = false;
+    },
+    resetSong(song) {
+      if (song) {
+        // If a specific song is provided, reset that song
+        if (this.current.src === song.src) {
+          this.player.currentTime = 0; // Reset current time to 0
+          this.player.load(); // Reload the audio file
+          this.isPlaying = false; // Set isPlaying to false
+        }
+      } else {
+        // If no specific song is provided, reset the currently playing song
+        this.player.currentTime = 0; // Reset current time to 0
+        this.player.load(); // Reload the audio file
+        this.isPlaying = false; // Set isPlaying to false
+      }
+    },
+    updateTime() {
+      this.currentTime = this.player.currentTime;
+      this.duration = this.player.duration;
+    },
+    songEnded() {
+      // Automatically play the next song when the current one ends
+      this.next();
     },
   },
   created() {
-    this.current = this.songs[this.index];
-    this.player.src = this.current.src;
+    this.current = this.songs[0]; // Set current to the first song in the playlist
+    this.player.addEventListener("timeupdate", this.updateTime);
+    this.player.addEventListener("ended", this.songEnded);
   },
-  beforeUnmount() {
+  beforeDestroy() {
+    this.player.removeEventListener("timeupdate", this.updateTime);
+    this.player.removeEventListener("ended", this.songEnded);
     this.player.pause();
     this.isPlaying = false;
   },
@@ -116,12 +181,13 @@ export default {
 .song-title span {
   font-weight: 700;
 }
-.controls {
+.controls,
+.stop-control {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 15px 15px;
-  margin-bottom: 5rem;
+  margin-bottom: 1rem;
 }
 button {
   appearance: none;
@@ -153,6 +219,21 @@ button:hover {
   border: 2px solid var(--light-blue);
 }
 
+.stop {
+  font-weight: 700;
+  padding: 10px 15px;
+  margin: 0px 15px;
+  border-radius: 5px;
+  border: 2px solid var(--light-blue);
+  color: var(--light-blue);
+  cursor: pointer;
+}
+
+.stop:hover {
+  color: #000;
+  background-color: var(--light-blue);
+}
+
 .playlist.all {
   padding: 10px;
   border-radius: 5px;
@@ -176,6 +257,7 @@ button:hover {
 .playlist .song:hover {
   color: #000;
 }
+
 .playlist .song.playing {
   color: var(--light-blue);
   border: 2px solid var(--light-blue);
@@ -184,6 +266,23 @@ button:hover {
 
 .playlist .song.playing:hover {
   color: #000;
+}
+
+.progress-bar {
+  width: 90%;
+  height: 30px;
+  background-color: var(--light-blue);
+  margin: 1rem auto;
+  border-radius: 5px;
+  border: 2px solid var(--light-blue);
+  --progress: 0;
+}
+
+.progress {
+  height: 100%;
+  background-color: var(--dark-alt);
+  border-radius: 5px;
+  width: var(--progress);
 }
 
 @media (max-width: 767px) {
