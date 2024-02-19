@@ -1,7 +1,7 @@
 <template>
   <main>
     <div class="a">
-      <h1 class="animate-charcter">Mladen<br />Full<br />Responsive</h1>
+      <h1 class="animate-charcter">MJ Music<br />Coming Soon</h1>
     </div>
   </main>
 </template>
