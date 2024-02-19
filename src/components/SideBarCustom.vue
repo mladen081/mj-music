@@ -36,7 +36,7 @@
 
 <script setup>
 import { ref } from "vue";
-import logoURL from "../assets/music-logo.png";
+import logoURL from "../assets/mj_logo.png";
 
 const isExpanded = ref(localStorage.getItem("isExpanded") === "true");
 
@@ -52,10 +52,10 @@ aside {
   flex-direction: column;
   background-color: var(--dark-blue);
   color: var(--light);
-  width: calc(2rem + 32px);
+  width: calc(0.1rem + 3.2rem);
   overflow: hidden;
   min-height: 100vh;
-  padding: 1rem;
+  padding: 1.4rem;
   transition: 0.2s ease-in-out;
 
   .flex {
@@ -63,17 +63,17 @@ aside {
   }
 
   .logo {
-    margin-bottom: 1rem;
+    margin-bottom: 1.6rem;
 
     img {
-      width: 2rem;
+      width: 3.2rem;
     }
   }
 
   .menu-toggle-wrap {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 1rem;
+    margin-bottom: 1.6rem;
 
     position: relative;
     top: 0;
@@ -82,7 +82,7 @@ aside {
     .menu-toggle {
       transition: 0.2s ease-in-out;
       .material-icons {
-        font-size: 2rem;
+        font-size: 3.2rem;
         color: var(--light);
         transition: 0.2s ease-out;
       }
@@ -90,7 +90,7 @@ aside {
       &:hover {
         .material-icons {
           color: var(--light-blue);
-          transform: translateX(0.5rem);
+          transform: translateX(0.8rem);
         }
       }
     }
@@ -103,7 +103,7 @@ aside {
   }
 
   .menu {
-    margin: 0 -1rem;
+    margin: 0 -1.6rem;
 
     .button {
       display: flex;
@@ -111,10 +111,10 @@ aside {
       text-decoration: none;
 
       transition: 0.2s ease-in-out;
-      padding: 0.5rem 1rem;
+      padding: 0.8rem 1.6rem;
 
       .material-icons {
-        font-size: 2rem;
+        font-size: 3.2rem;
         color: var(--light);
         transition: 0.2s ease-in-out;
       }
@@ -134,7 +134,7 @@ aside {
 
       &.router-link-exact-active {
         background-color: var(--dark-alt);
-        border-right: 5px solid var(--light-blue);
+        border-right: 0.5rem solid var(--light-blue);
 
         .material-icons,
         .text {
@@ -149,7 +149,7 @@ aside {
     transition: opacity 0.3s ease-in-out;
 
     p {
-      font-size: 0.875rem;
+      font-size: 1.4rem;
       color: var(--grey);
     }
   }
@@ -158,7 +158,7 @@ aside {
     width: var(--sidebar-width);
 
     .menu-toggle-wrap {
-      top: -3rem;
+      top: -4.8rem;
 
       .menu-toggle {
         transform: rotate(-180deg);
@@ -172,7 +172,7 @@ aside {
 
     .button {
       .material-icons {
-        margin-right: 1rem;
+        margin-right: 1.6rem;
       }
     }
 

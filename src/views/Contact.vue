@@ -110,13 +110,14 @@ label {
   font-family: "Open Sans" sans-serif;
   color: var(--light-blue);
   margin: 0;
+  font-size: 1.6rem;
 }
 .container {
   display: block;
-  border-radius: 10px;
+  border-radius: 1rem;
   margin: 0 auto;
-  padding: 0 0 10px 10px;
-  max-width: 330px;
+  padding: 0 0 1rem 1rem;
+  max-width: 33rem;
   background-color: var(--light-dark);
 }
 .title {
@@ -126,71 +127,71 @@ label {
   color: var(--light-blue);
 }
 form {
-  padding: 10px 10px 0 0;
+  padding: 1rem 1rem 0 0;
 }
 hr {
   width: 100%;
   display: block;
-  margin: 5px 0;
-  height: 5px;
+  margin: 0.5rem 0;
+  height: 0.5rem;
   border: 0;
   background-color: var(--light-blue);
 }
 input,
 textarea {
-  width: 100%;
-  border: 2px solid #fff;
-  border-radius: 3px;
+  width: 90%;
+  border: 0.2rem solid #fff;
+  border-radius: 0.3rem;
   resize: none;
-  padding: 0 5px;
+  padding: 0 0.5rem;
   box-sizing: border-box;
   font-family: "Open Sans" sans-serif;
-  font-size: 16px;
+  font-size: 1.6rem;
   color: #000000;
 }
 input[type="text"],
 input[type="email"] {
-  padding: 0 1px;
-  height: 40px;
-  width: 100%;
+  padding: 0 0.1rem;
+  height: 4rem;
+  width: 90%;
 }
 input:focus,
 textarea:focus {
   outline: none;
 }
 .form-input {
-  margin: 5px 0 10px 0;
+  margin: 0.5rem 0 1rem 0;
 }
 .form-textarea {
-  margin: 5px 0;
-  width: 100%;
-  height: 100px;
+  margin: 0.5rem 0 1.5rem 0;
+  width: 90%;
+  height: 10rem;
 }
 input[type="submit"] {
-  width: 100%;
-  height: 50px;
+  width: 90%;
+  height: 5rem;
   background-color: var(--dark-alt);
   border: 0;
   color: #fff;
-  border: 2px solid var(--light);
-  border-radius: 8px;
-  margin: 10px 0 0 0;
+  border: 0.2rem solid var(--light);
+  border-radius: 0.8rem;
+  margin: 0.1rem 0 0 0;
   font-family: "Fira sans" sans-serif;
-  font-size: 22px;
+  font-size: 2.2rem;
   cursor: pointer;
 }
 
 input:hover[type="submit"] {
   color: var(--light-blue);
-  border: 2px solid var(--light-blue);
+  border: 0.2rem solid var(--light-blue);
 }
 
 @media (max-width: 767px) {
   form {
-    padding: 10px 10px 0 20px;
+    padding: 0.1rem 0.1rem 0 2rem;
   }
   .title h1 {
-    padding-left: 1.4rem;
+    padding-left: 2.2rem;
   }
 }
 </style>

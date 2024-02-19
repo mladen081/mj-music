@@ -5,7 +5,7 @@
 
       <section class="player">
         <h2 class="song-title" @click="resetSong(current)">
-          {{ current.title }} - <span>{{ current.artist }}</span>
+          {{ current.title }} - {{ current.artist }}
         </h2>
         <div class="controls">
           <button class="prev" @click="prev">Prev</button>
@@ -186,7 +186,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px 15px;
+  padding: 1.5rem 1.5rem;
   margin-bottom: 1rem;
 }
 button {
@@ -204,27 +204,27 @@ button:hover {
 .play,
 .pause {
   font-weight: 700;
-  padding: 10px 15px;
-  margin: 0px 15px;
-  border-radius: 2px;
-  width: 150px;
-  border: 2px solid var(--light-blue);
+  padding: 1rem 1.5rem;
+  margin: 0px 1.5rem;
+  border-radius: 0.5rem;
+  width: 15rem;
+  border: 0.2rem solid var(--light-blue);
 }
 .next,
 .prev {
   font-weight: 700;
-  padding: 10px 15px;
-  margin: 0px 15px;
-  border-radius: 5px;
-  border: 2px solid var(--light-blue);
+  padding: 1rem 1.5rem;
+  margin: 0px 1.5rem;
+  border-radius: 0.5rem;
+  border: 0.2rem solid var(--light-blue);
 }
 
 .stop {
   font-weight: 700;
-  padding: 10px 15px;
-  margin: 0px 15px;
-  border-radius: 5px;
-  border: 2px solid var(--light-blue);
+  padding: 1rem 1.5rem;
+  margin: 0px 1.5rem;
+  border-radius: 0.5rem;
+  border: 0.2rem solid var(--light-blue);
   color: var(--light-blue);
   cursor: pointer;
 }
@@ -235,24 +235,24 @@ button:hover {
 }
 
 .playlist.all {
-  padding: 10px;
-  border-radius: 5px;
-  border: 2px solid var(--light-blue);
-  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.2rem solid var(--light-blue);
+  margin: 1.6rem auto;
   width: 50%;
 }
 .playlist {
-  padding: 0px 20px;
+  padding: 0px 2rem;
 }
 .playlist .song {
   display: block;
   width: 100%;
-  padding: 15px;
-  font-size: 20px;
+  padding: 0.3rem;
+  font-size: 1.8rem;
   font-weight: 700;
   cursor: pointer;
   color: var(--light-blue);
-  margin: 20px 0 20px 0;
+  margin: 1.8rem 0 1.8rem 0;
 }
 .playlist .song:hover {
   color: #000;
@@ -260,8 +260,8 @@ button:hover {
 
 .playlist .song.playing {
   color: var(--light-blue);
-  border: 2px solid var(--light-blue);
-  border-radius: 5px;
+  border: 0.2rem solid var(--light-blue);
+  border-radius: 0.5rem;
 }
 
 .playlist .song.playing:hover {
@@ -270,32 +270,32 @@ button:hover {
 
 .progress-bar {
   width: 90%;
-  height: 30px;
+  height: 3rem;
   background-color: var(--light-blue);
-  margin: 1rem auto;
-  border-radius: 5px;
-  border: 2px solid var(--light-blue);
+  margin: 1.6rem auto;
+  border-radius: 0.5rem;
+  border: 0.2rem solid var(--light-blue);
   --progress: 0;
 }
 
 .progress {
   height: 100%;
   background-color: var(--dark-alt);
-  border-radius: 5px;
+  border-radius: 0.5rem;
   width: var(--progress);
 }
 
 @media (max-width: 767px) {
   .next,
   .prev {
-    margin: 5px 0;
+    margin: 0.5rem 0;
   }
   .play,
   .pause {
-    width: 100px;
+    width: 6rem;
   }
   .playlist.all {
-    width: 90%;
+    width: 84%;
   }
 }
 </style>
