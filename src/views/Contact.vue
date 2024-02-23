@@ -2,46 +2,45 @@
   <main>
     <div class="container">
       <div class="title">
-        <h1>
-          Contact Me
-          <hr />
-        </h1>
+        <h1>Contact Me</h1>
       </div>
 
       <div v-if="!formSent">
-        <form class="form" ref="form" @submit.prevent="sendEmail">
-          <label for="name">Name</label>
-          <input
-            class="form-input"
-            type="text"
-            v-model="name"
-            name="name"
-            placeholder="Your Name"
-            id="name"
-          />
-          <label for="email">Email</label>
-          <input
-            class="form-input"
-            type="email"
-            v-model="email"
-            name="email"
-            placeholder="Your Email"
-            id="email"
-          />
-          <label for="message">Message</label>
-          <textarea
-            class="form-textarea"
-            name="message"
-            v-model="message"
-            cols="30"
-            rows="5"
-            placeholder="Message"
-            id="message"
-          >
-          </textarea>
+        <div class="form-wrapper">
+          <form class="form" ref="form" @submit.prevent="sendEmail">
+            <label for="name">Name</label>
+            <input
+              class="form-input"
+              type="text"
+              v-model="name"
+              name="name"
+              placeholder="Your Name"
+              id="name"
+            />
+            <label for="email">Email</label>
+            <input
+              class="form-input"
+              type="email"
+              v-model="email"
+              name="email"
+              placeholder="Your Email"
+              id="email"
+            />
+            <label for="message">Message</label>
+            <textarea
+              class="form-textarea"
+              name="message"
+              v-model="message"
+              cols="30"
+              rows="5"
+              placeholder="Message"
+              id="message"
+            >
+            </textarea>
 
-          <input type="submit" value="Send" />
-        </form>
+            <input type="submit" value="Send" />
+          </form>
+        </div>
       </div>
 
       <div v-else>
@@ -113,33 +112,22 @@ label {
   font-size: 1.6rem;
 }
 .container {
-  display: block;
-  border-radius: 1rem;
-  margin: 0 auto;
-  padding: 0 0 1rem 1rem;
-  max-width: 33rem;
   background-color: var(--light-dark);
-}
-.title {
-  display: inline-block;
 }
 .title h1 {
   color: var(--light-blue);
 }
-form {
-  padding: 1rem 1rem 0 0;
+.form-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-hr {
-  width: 100%;
-  display: block;
-  margin: 0.5rem 0;
-  height: 0.5rem;
-  border: 0;
-  background-color: var(--light-blue);
+form {
+  width: 400px;
 }
 input,
 textarea {
-  width: 90%;
+  width: 100%;
   border: 0.2rem solid #fff;
   border-radius: 0.3rem;
   resize: none;
@@ -153,7 +141,7 @@ input[type="text"],
 input[type="email"] {
   padding: 0 0.1rem;
   height: 4rem;
-  width: 90%;
+  width: 100%;
 }
 input:focus,
 textarea:focus {
@@ -164,16 +152,16 @@ textarea:focus {
 }
 .form-textarea {
   margin: 0.5rem 0 1.5rem 0;
-  width: 90%;
+  width: 100%;
   height: 10rem;
 }
 input[type="submit"] {
-  width: 90%;
+  width: 100%;
   height: 5rem;
-  background-color: var(--dark-alt);
+  background-color: transparent;
   border: 0;
-  color: #fff;
-  border: 0.2rem solid var(--light);
+  color: var(--light-blue);
+  border: 0.2rem solid var(--light-blue);
   border-radius: 0.8rem;
   margin: 0.1rem 0 0 0;
   font-family: "Fira sans" sans-serif;
@@ -182,13 +170,13 @@ input[type="submit"] {
 }
 
 input:hover[type="submit"] {
-  color: var(--light-blue);
-  border: 0.2rem solid var(--light-blue);
+  color: #f778ba;
+  border: 0.2rem solid #f778ba;
 }
 
 @media (max-width: 767px) {
   form {
-    padding: 0.1rem 0.1rem 0 2rem;
+    width: 280px;
   }
   .title h1 {
     padding-left: 2.2rem;

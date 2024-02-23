@@ -1,7 +1,7 @@
 <template>
   <main>
     <div class="a">
-      <h1 class="animate-charcter">MJ Music<br />Coming Soon</h1>
+      <h1 class="home-title">MJ Music<br />Coming Soon</h1>
     </div>
   </main>
 </template>
@@ -13,26 +13,9 @@
   align-items: center;
   margin-top: 8%;
 }
-.animate-charcter {
+.home-title {
   text-transform: uppercase;
-  background-image: linear-gradient(
-    -125deg,
-    var(--dark-alt) 0%,
-    var(--light-blue) 33%,
-    var(--dark-alt) 67%,
-    var(--light-blue) 100%
-  );
-  background-size: auto auto;
-  background-clip: border-box;
-  background-size: 200% auto;
-  color: var(--light-blue);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textclip 10s linear infinite;
-  display: inline-block;
   font-size: 11rem;
-  text-align: center;
 }
 
 @keyframes textclip {
@@ -45,7 +28,7 @@
   .a {
     margin-top: 12%;
   }
-  .animate-charcter {
+  .home-title {
     font-size: 9.5rem;
   }
 }
@@ -54,7 +37,7 @@
   .a {
     margin-top: 25%;
   }
-  .animate-charcter {
+  .home-title {
     font-size: 8rem;
   }
 }
@@ -63,7 +46,7 @@
   .a {
     margin-top: 30%;
   }
-  .animate-charcter {
+  .home-title {
     font-size: 4rem;
   }
 }

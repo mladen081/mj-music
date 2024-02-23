@@ -3,8 +3,6 @@
     <div class="info">
       <h1 class="title">About Me</h1>
       <div class="a"></div>
-      <div class="b"></div>
-      <div class="c"></div>
     </div>
   </main>
 </template>
@@ -30,14 +28,6 @@
 
 .a {
   background-color: #f778ba;
-}
-
-.b {
-  background-color: #33b3ae;
-}
-
-.c {
-  background-color: #37a047;
 }
 
 @media (max-width: 1024px) {

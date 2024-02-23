@@ -54,6 +54,22 @@ h1 {
   padding-top: 1.6rem;
   padding-bottom: 4.8rem;
   text-align: center;
+
+  background-image: linear-gradient(
+    -125deg,
+    var(--dark-alt) 0%,
+    var(--light-blue) 33%,
+    var(--dark-alt) 67%,
+    var(--light-blue) 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: var(--light-blue);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 10s linear infinite;
 }
 
 h2 {
@@ -79,6 +95,12 @@ p {
 
 span {
   font-size: 1.5rem;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
 }
 
 .app {
