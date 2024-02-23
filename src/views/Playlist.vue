@@ -259,8 +259,8 @@ button:hover {
 }
 
 .playlist .song.playing {
-  color: var(--light-blue);
-  border: 0.2rem solid var(--light-blue);
+  color: #f778ba;
+  border: 0.2rem #f778ba;
   border-radius: 0.5rem;
 }
 
@@ -280,7 +280,7 @@ button:hover {
 
 .progress {
   height: 100%;
-  background-color: var(--dark-alt);
+  background-color: var(--lost-light);
   border-radius: 0.5rem;
   width: var(--progress);
 }

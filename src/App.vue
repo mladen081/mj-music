@@ -12,7 +12,7 @@ import SideBarCustom from "./components/SideBarCustom.vue";
 
 <style lang="scss">
 :root {
-  --light-blue: #add8e6;
+  --light-blue: #33b3ae;
   --dark-alt: #334155;
   --light: #f1f5f9;
   --dark-blue: #0d1117;
@@ -73,7 +73,7 @@ h1 {
 }
 
 h2 {
-  color: var(--light-blue);
+  color: #f778ba;
   text-align: center;
   margin-bottom: 4rem;
   font-size: 2.3rem;
