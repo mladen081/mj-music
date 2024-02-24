@@ -66,6 +66,12 @@ export default {
   },
   methods: {
     sendEmail(e) {
+      // Prevent form submission if name or email is not provided
+      if (!this.name.trim() || !this.email.trim()) {
+        alert("Please provide both name and email");
+        return;
+      }
+
       try {
         emailjs
           .sendForm(
@@ -97,7 +103,7 @@ export default {
 <style scoped>
 h2 {
   color: var(--light-blue);
-  text-align: left;
+  text-align: center;
   padding-left: 0;
 }
 .wrapper {

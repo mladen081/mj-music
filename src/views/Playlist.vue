@@ -271,10 +271,10 @@ button:hover {
 .progress-bar {
   width: 90%;
   height: 3rem;
-  background-color: var(--light-blue);
+  background-color: #fff;
   margin: 1.6rem auto;
   border-radius: 0.5rem;
-  border: 0.2rem solid var(--light-blue);
+  border: 0.2rem solid #fff;
   --progress: 0;
 }
 
