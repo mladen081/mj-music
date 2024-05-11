@@ -1,7 +1,7 @@
 <template>
   <Carousel>
     <Slide v-for="slide in 3" :key="slide">
-      <div class="carousel__item">{{ slide }}</div>
+      <div class="carousel__item"></div>
     </Slide>
 
     <template #addons>
@@ -37,7 +37,7 @@ export default defineComponent({
 
 <style>
 .carousel__item {
-  min-height: 45rem;
+  min-height: 75rem;
   width: 100%;
   background-color: #000;
   background-image: url("../assets/p1.jpg");
@@ -84,5 +84,17 @@ export default defineComponent({
 .carousel__liveregion {
   font-size: 2rem;
   color: #fff !important;
+}
+
+@media (max-width: 1600px) {
+  .carousel__item {
+    min-height: 40rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .carousel__item {
+    min-height: 45rem;
+  }
 }
 </style>

@@ -2,11 +2,38 @@
   <main>
     <div class="info">
       <h1 class="title">About Me</h1>
-      <div class="a"></div>
       <div class="b">
-        <img src="../assets/tata.jpg" />
+        <!-- <img src="../assets/tata.jpg" /> -->
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione aut
+          voluptatibus rem voluptatem amet? Soluta distinctio tempore
+          accusantium praesentium minus dolor illum quam, veniam quod dicta quia
+          eaque incidunt ea nobis ducimus eos eveniet suscipit voluptatibus
+          repellat a architecto nam exercitationem autem. Saepe quasi, quibusdam
+          aperiam amet ullam sit architecto?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+          totam repellat vel repellendus, officiis beatae sapiente tenetur
+          praesentium eius est et, nulla provident voluptate? A alias numquam
+          amet sunt optio sit eos quidem deleniti. Id quis culpa corrupti
+          ducimus excepturi hic recusandae? A iste non quis voluptates? Libero
+          nisi in inventore odio quas? Doloribus sapiente iste natus quos, modi
+          consequatur veniam. Minus modi ducimus porro tempora culpa illo saepe
+          quas non, ea beatae amet natus at nemo omnis neque, veritatis harum
+          provident odio quia enim? Quia minima sint distinctio, earum
+          repudiandae, modi ea facilis eius harum explicabo sit inventore
+          labore?
+        </p>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione aut
+          voluptatibus rem voluptatem amet? Soluta distinctio tempore
+          accusantium praesentium minus dolor illum quam, veniam quod dicta quia
+          eaque incidunt ea nobis ducimus eos eveniet suscipit voluptatibus
+          repellat a architecto nam exercitationem autem. Saepe quasi, quibusdam
+          aperiam amet ullam sit architecto?
+        </p>
       </div>
-      <div class="a"></div>
     </div>
   </main>
 </template>
@@ -22,14 +49,13 @@
   color: var(--turquoise-light);
 }
 
-.a {
-  height: 2rem;
-  width: 90%;
-  margin: 2rem auto;
+.b {
+  padding: 0 5rem;
 }
 
-.a {
-  background-color: var(--turquoise-dark);
+.b p {
+  margin: 3rem;
+  color: var(--turquoise-light);
 }
 
 .b img {
@@ -39,6 +65,9 @@
 }
 
 @media (max-width: 1024px) {
+  .b {
+    padding: 0 1rem;
+  }
 }
 
 @media (max-width: 767px) {

@@ -58,6 +58,7 @@ aside {
   padding: 1.4rem;
   transition: 0.2s ease-in-out;
   position: fixed;
+  z-index: 99;
 
   .flex {
     flex: 1 1 0%;
@@ -157,6 +158,7 @@ aside {
 
   &.is-expanded {
     width: var(--sidebar-width);
+    position: fixed;
 
     .menu-toggle-wrap {
       top: -4.8rem;

@@ -1,9 +1,9 @@
 <template>
   <main>
+    <basic-carousel />
     <div class="a">
       <h1 class="home-title">MJ Music<br />Coming Soon</h1>
     </div>
-    <basic-carousel />
   </main>
 </template>
 
@@ -16,7 +16,7 @@ import BasicCarousel from "../components/BasicCarousel.vue";
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 8%;
+  margin-top: 1%;
 }
 .home-title {
   text-transform: uppercase;
@@ -29,28 +29,13 @@ import BasicCarousel from "../components/BasicCarousel.vue";
   }
 }
 
-@media (max-width: 1200px) {
-  .a {
-    margin-top: 12%;
-  }
+@media (max-width: 1600px) {
   .home-title {
-    font-size: 9.5rem;
-  }
-}
-
-@media (max-width: 991px) {
-  .a {
-    margin-top: 25%;
-  }
-  .home-title {
-    font-size: 8rem;
+    font-size: 7.5rem;
   }
 }
 
 @media (max-width: 767px) {
-  .a {
-    margin-top: 30%;
-  }
   .home-title {
     font-size: 4rem;
   }

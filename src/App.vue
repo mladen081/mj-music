@@ -54,7 +54,7 @@ button {
 h1 {
   font-size: 4.8rem;
   font-weight: 700;
-  padding-top: 1.6rem;
+  padding-top: 3rem;
   padding-bottom: 4.8rem;
   text-align: center;
 
